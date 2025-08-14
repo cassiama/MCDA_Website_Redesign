@@ -46,6 +46,45 @@
 
 @theme {
   /* fonts */
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  /* typography */
+  --text-h1: 2.125rem;  /* 34px in Figma wireframe */ 
+  --text-h1--line-height: 1.2;
+  --text-h1--font-weight: 700;  /* bold */
+
+  --text-h2: 1.6875rem; /* 27px in Figma wireframe */
+  --text-h2--line-height: 1.25;
+  --text-h2--font-weight: 700;  /* bold */
+
+  --text-h3: 1.25rem; /* 20px in Figma wireframe */
+  --text-h3--line-height: 1.3;
+  --text-h3--font-weight: 600;  /* semibold */
+
+  --text-h4: 1rem;  /* 16px in Figma wireframe */
+  --text-h4--line-height: 1.35;
+  --text-h4--font-weight: 500;  /* medium */
+
+  /* Body & links */
+  --text-body-md: 0.9375rem;  /* 15px in Figma wireframe */
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 500; /* medium */
+
+  --text-body: 0.84375rem;  /* 13.5px in Figma wireframe */
+  --text-body--line-height: 1.6;
+  --text-body--font-weight: 400;  /* regular */
+
+  --text-link: 0.8125rem; /* 13px in Figma wireframe */
+  --text-link--line-height: 1.5;
+  --text-link--font-weight: 500;  /* medium */
+
+  --text-body-sm: 0.71875rem; /* 11.5px in Figma wireframe */
+  --text-body-sm--line-height: 1.5;
+  --text-body-sm--font-weight: 400; /* regular */
+
+  --text-button: 0.875rem;  /* 14px in Figma wireframe */
+  --text-button--line-height: 1.2;
+  --text-button--font-weight: 500;  /* medium */
 
 
   /* brand colors */

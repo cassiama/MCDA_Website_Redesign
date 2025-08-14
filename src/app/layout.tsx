@@ -1,17 +1,24 @@
+// type imports
 import type { Metadata } from "next";
+// library imports
+import { Work_Sans } from "next/font/google";
+// custom component imports
 import Header from "@/components/core/header";
 import Footer from "@/components/core/footer";
-import { Geist, Geist_Mono } from "next/font/google";
+// CSS imports
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-work-sans',
+  /**
+    400 = regular
+    500 = medium
+    600 = semibold 
+    700 = bold
+  */
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -85,7 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${workSans.variable} antialiased`}
       >
         <Header />
         {children}
