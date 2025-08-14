@@ -8,7 +8,7 @@
   --mcda-green-100: #354C1A;
   --mcda-green-80:  #4F7326;
   --mcda-green-60:  #699933;
-  --mcda-green-50:  #ABD47D; /* “green” base color */
+  --mcda-green-50:  #ABD47D;  /* "green" base color */
   --mcda-green-40:  #B5D98C;
   --mcda-green-20:  #CEE6B2;
 
@@ -16,7 +16,7 @@
   --mcda-teal-100:  #133933;
   --mcda-teal-80:   #206055;
   --mcda-teal-60:   #267366;
-  --mcda-teal-50:   #2E8A7A; /* “deep teal” base color */
+  --mcda-teal-50:   #2E8A7A;  /* "deep teal" base color */
   --mcda-teal-40:   #39AC99;
   --mcda-teal-20:   #66CCBB;
 
@@ -24,13 +24,13 @@
   --mcda-orange-100: #662700;
   --mcda-orange-80:  #CC4E00;
   --mcda-orange-60:  #FF6200;
-  --mcda-orange-50:  #FF8B42; /* “orange” base color */
+  --mcda-orange-50:  #FF8B42; /* "orange" base color */
   --mcda-orange-40:  #FFA166;
   --mcda-orange-20:  #FFC099;
 
   /* grays */
   --mcda-gray-60: #050505;
-  --mcda-gray-50: #1F1F1F;    /* “dark gray” base color */
+  --mcda-gray-50: #1F1F1F;  /* "dark gray" base color */
   --mcda-gray-40: #4D4D4D;
   --mcda-gray-20: #666666;
 
@@ -175,8 +175,32 @@
   --color-input-hint: var(--color-muted-text);
 }
 
+/* utilities */
+/* headings - applies to text elements */
 @utility heading-1 { @apply text-h1 text-header-1; }
 @utility heading-2 { @apply text-h2 text-header-2; }
+
+/* drop shadows - applies universally */
+@utility shadow-elev-300 { box-shadow: 0 4px 4px -1px rgb(0 0 0 / 0.20); }
+@utility shadow-elev-200 { box-shadow: 0 4px 4px -1px rgb(0 0 0 / 0.10); }
+
+/* buttons */
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-button font-[var(--text-button--font-weight)] transition-shadow duration-150 shadow-elev-300 select-none; }
+
+/* primary (fill with... secondary color.) */
+@utility btn-primary {
+  @apply btn border border-black/70 bg-primary-button text-button-text hover:bg-primary-button-hover focus-visible:bg-primary-button-focused disabled:saturate-75;
+}
+
+/* secondary (fill with accent color) */
+@utility btn-secondary {
+  @apply btn border border-black/70 bg-secondary-button text-secondary-button-text hover:bg-secondary-button-hover focus-visible:bg-secondary-button-focused disabled:pointer-events-none disabled:saturate-75;
+}
+
+/* Secondary outline (transparent fill + teal border) */
+@utility btn-secondary-outline {
+  @apply btn bg-secondary-button text-secondary-button-text border border-white hover:bg-secondary-button-hover focus-visible:bg-teal-50/15 disabled:pointer-events-none;
+}
 
 body {
   background: var(--color-background);

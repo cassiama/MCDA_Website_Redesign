@@ -94,11 +94,24 @@ export default function TokensPage() {
           <p className="text-body">Body / 13.5 — The quick brown fox jumps over the lazy dog.</p>
           <p className="text-link">Link / 13 — (style color as needed)</p>
           <p className="text-body-sm">Body Small / 11.5</p>
-          <button
-            className="text-button inline-flex items-center rounded-full bg-primary-button hover:bg-primary-button-hover focus:bg-primary-button-focused text-button-text px-4 py-2 border border-black/70 shadow-[0_2px_0_rgba(0,0,0,.15)]"
+          <div
+            className="inline-grid grid-cols-3 mx-auto gap-4"
           >
-            Primary Button
-          </button>
+            {/* primary */}
+            <button className="btn-primary">+ Button +</button>
+            <button className="btn-primary hover:btn-pressed">+ Button +</button>
+            <button className="btn-primary" disabled>+ Button +</button>
+
+            {/* secondary */}
+            <button className="btn-secondary">+ Button +</button>
+            <button className="btn-secondary hover:btn-pressed">+ Button +</button>
+            <button className="btn-secondary" disabled>+ Button +</button>
+
+            {/* outline */}
+            <button className="btn-secondary-outline">+ Button +</button>
+            <button className="btn-secondary-outline hover:btn-pressed">+ Button +</button>
+            <button className="btn-secondary-outline" disabled>+ Button +</button>
+          </div>
         </div>
       </section>
 
