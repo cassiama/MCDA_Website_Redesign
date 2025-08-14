@@ -1,25 +1,145 @@
 @import "tailwindcss";
 
+/* Brand palette */
 :root {
-  --background: #fafafa;
-  --foreground: #D9D9D9;
-  --mcda-green: #ABD47D;
-  --mcda-deep-teal: #2E8A7A;
-  --mcda-orange: #FF8B42;
-  --mcda-off-white: #FAFAFA;
-  --mcda-dark-gray: #1F1F1F;
+  /* greens */
+  --mcda-green-100: #354C1A;
+  --mcda-green-80:  #4F7326;
+  --mcda-green-60:  #699933;
+  --mcda-green-50:  #ABD47D; /* “green” base color */
+  --mcda-green-40:  #B5D98C;
+  --mcda-green-20:  #CEE6B2;
+
+  /* deep teal */
+  --mcda-teal-100:  #133933;
+  --mcda-teal-80:   #206055;
+  --mcda-teal-60:   #267366;
+  --mcda-teal-50:   #2E8A7A; /* “deep teal” base color */
+  --mcda-teal-40:   #39AC99;
+  --mcda-teal-20:   #66CCBB;
+
+  /* orange */
+  --mcda-orange-100: #662700;
+  --mcda-orange-80:  #CC4E00;
+  --mcda-orange-60:  #FF6200;
+  --mcda-orange-50:  #FF8B42; /* “orange” base color */
+  --mcda-orange-40:  #FFA166;
+  --mcda-orange-20:  #FFC099;
+
+  /* grays */
+  --mcda-gray-60: #050505;
+  --mcda-gray-50: #1F1F1F;    /* “dark gray” base color */
+  --mcda-gray-40: #4D4D4D;
+  --mcda-gray-20: #666666;
+
+  /* whites */
+  --mcda-white-100: #8C8C8C;
+  --mcda-white-80: #B2B2B2;
+  --mcda-white-60: #D9D9D9;
+  --mcda-white-50: #FFFFFF;
+  --mcda-offwhite: #FAFAFA;
+
+  /* Extras from your tokens */
+  --mcda-section-bg: #D9F2EE;
+  --mcda-header-2:   #9CCC66;
 }
 
-/* @theme {
-  --mcda-link-text: var()
-} */
+@theme {
+  /* fonts */
 
-@theme inline {
+
+  /* brand colors */
+  --color-green-20: var(--mcda-green-20);
+  --color-green-40: var(--mcda-green-40);
+  --color-green-50: var(--mcda-green-50);
+  --color-green-60: var(--mcda-green-60);
+  --color-green-80: var(--mcda-green-80);
+  --color-green-100: var(--mcda-green-100);
+
+  --color-teal-20: var(--mcda-teal-20);
+  --color-teal-40: var(--mcda-teal-40);
+  --color-teal-50: var(--mcda-teal-50);
+  --color-teal-60: var(--mcda-teal-60);
+  --color-teal-80: var(--mcda-teal-80);
+  --color-teal-100: var(--mcda-teal-100);
+
+  --color-orange-20: var(--mcda-orange-20);
+  --color-orange-40: var(--mcda-orange-40);
+  --color-orange-50: var(--mcda-orange-50);
+  --color-orange-60: var(--mcda-orange-60);
+  --color-orange-80: var(--mcda-orange-80);
+  --color-orange-100: var(--mcda-orange-100);
+
+  --color-gray-20: var(--mcda-gray-20);
+  --color-gray-40: var(--mcda-gray-40);
+  --color-gray-50: var(--mcda-gray-50);
+  --color-gray-60: var(--mcda-gray-60);
+
+  --color-white-100: var(--mcda-white-100);
+  --color-white-80: var(--mcda-white-80);
+  --color-white-60: var(--mcda-white-60);
+  --color-white-50: var(--mcda-white-50);
+  --color-offwhite: var(--mcda-offwhite);
+
+
+  /* colors for bg & fg*/
+  --color-background: var(--mcda-offwhite); /* used 70% of the time - for page bg */
+  --color-foreground: var(--mcda-gray-50);  /* default text */
+
+
+  /* primary brand colors */
+  --color-primary: var(--mcda-green-50); /* used 20% of the time - for most elements*/
+  --color-secondary: var(--mcda-orange-50); /* used 8% of the time - for CTAs */
+  --color-accent: var(--mcda-teal-50); /* used 2% of the time - for element borders (when appropriate) */
+
+
+  /* colors for text (& section bg too, i guess) */
+  --color-header-1: var(--mcda-green-60);
+  --color-header-2: var(--mcda-header-2);
+  --color-section-bg: var(--mcda-section-bg);
+
+  --color-text: var(--mcda-gray-50);
+  --color-muted-text: var(--mcda-gray-40);
+  --color-disabled-text: var(--mcda-gray-20);
+
+  --color-link-text: var(--mcda-gray-60);
+  --color-secondary-link-text: var(--mcda-green-60);
+  --color-hero-text: var(--mcda-white);
+
+
+  /* buttons */
+  --color-primary-button: var(--mcda-orange-50);
+  --color-primary-button-hover: var(--mcda-orange-40);
+  --color-primary-button-focused: var(--mcda-orange-60);
+
+  --color-secondary-button: var(--mcda-teal-50);
+  --color-secondary-button-hover: var(--mcda-teal-40);
+  --color-secondary-button-focused: var(--mcda-teal-60);
+
+  --color-button-text: var(--mcda-gray-60);
+  --color-secondary-button-text: var(--mcda-white);
+
+  
+  /* misc. elements w/ "surfaces" */
+  --color-card: var(--mcda-white);
+  --color-card-border: var(--mcda-teal-40);
+  --color-table-border: var(--mcda-green-40);
+  --color-table-header: var(--mcda-green-60);
+  --color-table-cells: var(--mcda-white);
+  --color-table-text: var(--mcda-gray-50);
+  --color-table-cell-divider: var(--mcda-teal-20);
+  --color-table-cells-caption: var(--mcda-green-50);
+
+  --color-input-bg: var(--color-card);
+  --color-input-hint: var(--color-muted-text);
+}
+
+/* @theme inline {
   --color-background: var(--mcda-off-white);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -31,5 +151,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
