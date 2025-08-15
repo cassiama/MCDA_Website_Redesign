@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,7 +24,7 @@ const NAV: NavLink[] = [
 ];
 
 
-export default function Header() {
+const Header = (): JSX.Element => {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
 
@@ -45,7 +45,7 @@ export default function Header() {
                         aria-label="MCDA Home"
                     >
                         <Image
-                            className="h-[100px] md:h-[110px] lg:h-[120px] w-auto"
+                            className="h-[100px] md:h-[110px] lg:h-[120px] w-auto hover:scale-[1.03]"
                             src={logo}
                             alt="Monmouth County Diversity Alliance Inc."
                             width={1920}
@@ -57,7 +57,7 @@ export default function Header() {
                 </div>
 
                 {/* center: desktop nav */}
-                <nav className="hidden lg:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-[#5f8b3a]">
+                <nav className="hidden lg:flex flex-1 items-center justify-center gap-6 lg:gap-8 text-h4 text-secondary-link-text">
                     {/* navigation links */}
                     {NAV.map(({ href, label, cta }) => (
                         <Link
@@ -66,9 +66,9 @@ export default function Header() {
                             className={[
                                 "text-center",
                                 "transition",
-                                "hover:drop-shadow-[0_1px_1px_rgba(0,0,0,.20)]",
+                                "hover:drop-shadow-[0_1px_1px_rgba(0,0,0,.20)] hover:scale-[1.03] focus-visible:scale-[1.03]",
                                 isActive(href) ? "font-semibold text-black" : "",
-                                cta ? "ml-4 inline-flex items-center rounded-full bg-[var(--mcda-orange)] px-4 py-2 text-black font-semibold border border-black/70 shadow-[0_2px_0_rgba(0,0,0,.15)]" : "",
+                                cta ? "btn btn-primary px-5 py-2" : "",
                             ].join(" ")}
                         >
                             {label}
@@ -77,13 +77,13 @@ export default function Header() {
                 </nav>
 
                 {/* right: mobile hamburger */}
-                <div className="justify-self-end">
+                <div className="justify-self-end hover:scale-[1.03] hover:shadow-elev-400 focus-visible:scale-[1.03]">
                     <button
                         type="button"
                         onClick={() => setOpen((visibility) => !visibility)}
                         className="lg:hidden justify-self-end inline-grid place-items-center
-                        h-16 w-16 rounded-lg bg-[var(--mcda-green)] 
-                        shadow-[0_2px_4px_rgba(0,0,0,.12)]"
+                        h-16 w-16 rounded-lg bg-primary 
+                        shadow-elev-300"
                         aria-label={ open ? "Close menu" : "Open menu" }
                         aria-expanded={open}
                         aria-controls="mobile-menu"
@@ -123,7 +123,7 @@ export default function Header() {
                     >
                         {/* stacked links */}
                         <nav
-                            className="flex flex-col items-center justify-center gap-6 text-center text-[var(--mcda-green)]"
+                            className="flex flex-col items-center justify-center gap-6 text-center text-h4 text-secondary-link-text"
                         >
                             {NAV.map(({ href, label, cta }) => (
                                 <Link
@@ -132,9 +132,9 @@ export default function Header() {
                                     className={[
                                         "inline-flex",
                                         "transition",
-                                        "hover:drop-shadow-[0_1px_1px_rgba(0,0,0,.20)]",
+                                        "hover:drop-shadow-[0_1px_1px_rgba(0,0,0,.20)] hover:scale-[1.03] focus-visible:scale-[1.03]",
                                         isActive(href) ? "font-semibold text-black" : "",
-                                        cta ? "rounded-full bg-[var(--mcda-orange)] px-5 py-2 text-black font-semibold border border-black/70 shadow-[0_2px_0_rgba(0,0,0,.15)]" : "",
+                                        cta ? "btn btn-primary px-5 py-2" : "",
                                     ].join(" ")}
                                 >
                                     {label}
@@ -146,4 +146,6 @@ export default function Header() {
             )}
         </header>
     );
-}
+};
+
+export default Header;

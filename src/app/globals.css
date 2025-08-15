@@ -181,25 +181,29 @@
 @utility heading-2 { @apply text-h2 text-header-2; }
 
 /* drop shadows - applies universally */
+@utility shadow-elev-400 { box-shadow: 0 8px 16px -2px rgb(0 0 0 / 0.20) }
 @utility shadow-elev-300 { box-shadow: 0 4px 4px -1px rgb(0 0 0 / 0.20); }
 @utility shadow-elev-200 { box-shadow: 0 4px 4px -1px rgb(0 0 0 / 0.10); }
 
+/* inputs */
+@utility field { @apply w-fit min-w-35 rounded-md bg-input-bg border-1 border-card-border px-4 py-2 text-body-md placeholder:text-input-hint shadow-elev-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-50 }
+
 /* buttons */
-@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-button font-[var(--text-button--font-weight)] transition-shadow duration-150 shadow-elev-300 select-none; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-3 py-2 text-button font-[var(--text-button--font-weight)] transition-shadow duration-150 shadow-elev-300 hover:shadow-elev-400 select-none; }
 
 /* primary (fill with... secondary color.) */
 @utility btn-primary {
-  @apply btn border border-black/70 bg-primary-button text-button-text hover:bg-primary-button-hover focus-visible:bg-primary-button-focused disabled:saturate-75;
+  @apply btn bg-primary-button text-button-text hover:bg-primary-button-hover focus-visible:bg-primary-button-focused hover:scale-[1.03] focus-visible:scale-[1.03] disabled:pointer-events-none disabled:saturate-75;
 }
 
 /* secondary (fill with accent color) */
 @utility btn-secondary {
-  @apply btn border border-black/70 bg-secondary-button text-secondary-button-text hover:bg-secondary-button-hover focus-visible:bg-secondary-button-focused disabled:pointer-events-none disabled:saturate-75;
+  @apply btn bg-secondary-button text-white hover:bg-secondary-button-hover focus-visible:bg-secondary-button-focused hover:scale-[1.03] focus-visible:scale-[1.03] disabled:pointer-events-none disabled:saturate-75;
 }
 
 /* Secondary outline (transparent fill + teal border) */
 @utility btn-secondary-outline {
-  @apply btn bg-secondary-button text-secondary-button-text border border-white hover:bg-secondary-button-hover focus-visible:bg-teal-50/15 disabled:pointer-events-none;
+  @apply btn bg-secondary-button text-white border border-white hover:bg-secondary-button-hover focus-visible:bg-teal-50/15 hover:scale-[1.03] focus-visible:scale-[1.03] disabled:pointer-events-none disabled:saturate-75;
 }
 
 body {
