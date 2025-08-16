@@ -1,11 +1,10 @@
 import { JSX } from "react";
 import Link from "next/link";
+import type { ContactInfo } from "../core/contact";
+import { Email, Facebook, Instagram, VReel } from "@/icons";
+import Contact from "../core/contact";
 
 type QuickLink = {
-  href: string,
-  label: string,
-}
-type ContactInfo = {
   href: string,
   label: string,
 }
@@ -19,10 +18,10 @@ const QUICK_LINKS: QuickLink[] = [
 ];
 
 const CONTACTS: ContactInfo[] = [
-  { href: "https://www.facebook.com/mcdiversityalliance/", label: "Facebook" },
-  { href: "https://www.instagram.com/mcdiversityalliance/", label: "Instagram" },
-  { href: "https://www.vreel.page/mcdiversityalliance", label: "VReel" },
-  { href: "mailto:Mcdiversityalliance@gmail.com", label: "Email" },
+  { href: "https://www.facebook.com/mcdiversityalliance/", label: "Facebook", icon: "Facebook" },
+  { href: "https://www.instagram.com/mcdiversityalliance/", label: "Instagram", icon: "Instagram" },
+  { href: "https://www.vreel.page/mcdiversityalliance", label: "VReel", icon: "VReel" },
+  { href: "mailto:Mcdiversityalliance@gmail.com", label: "Email", icon: "Email" },
 ];
 
 const Footer = (): JSX.Element => {
@@ -68,22 +67,14 @@ const Footer = (): JSX.Element => {
         </div>
 
         {/* contact */}
-        {/* TODO: This needs to be moved into its own separate component. */}
         <div className="mt-8 md:mt-10 p-3 flex flex-wrap justify-center gap-8">
-          {CONTACTS.map(({ href, label }) => (
-            <a
-              key={label}
+          {CONTACTS.map(({ label, href, icon }) => (
+            <Contact
+              key={label.toLowerCase()}
               href={href}
-              aria-label={label}
-              className="
-                flex items-center justify-center
-                w-22 h-22 md:w-24 md:h-24 rounded-full
-                bg-teal-50 shadow-elev-300 ring-4 ring-white
-                transition-transform hover:scale-[1.03] focus-visible:scale-[1.03]"
-            >
-              {/* TODO: place SVG/icon inside; this span keeps it accessible if you keep text instead */}
-              <span className="sr-only">{label}</span>
-            </a>
+              label={label}
+              icon={icon}
+            />
           ))}
         </div>
 
