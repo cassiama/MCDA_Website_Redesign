@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 // library imports
 import { Work_Sans } from "next/font/google";
 // custom component imports
-import Header from "@/components/core/header";
-import Footer from "@/components/core/footer";
+import Header from "@/components/nav/header";
+import Footer from "@/components/nav/footer";
 // CSS imports
 import "./globals.css";
 
