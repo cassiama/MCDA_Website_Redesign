@@ -2,18 +2,18 @@ import { JSX } from "react";
 import Link from "next/link";
 import Icon, { IconName } from "./icon";
 
-export type ContactInfo = {
+export type ContactIconInfo = {
   href: string,
   label: string,
   icon: IconName,
 
 }
 
-type ContactProps = {
-    [K in keyof ContactInfo]: ContactInfo[K]
+type ContactIconProps = {
+    [K in keyof ContactIconInfo]: ContactIconInfo[K]
 }
 
-const Contact = ({ href, label, icon }: ContactProps): JSX.Element => {
+const ContactIcon = ({ href, label, icon }: ContactIconProps): JSX.Element => {
     return (
         <Link
             href={href}
@@ -33,4 +33,4 @@ const Contact = ({ href, label, icon }: ContactProps): JSX.Element => {
     );
 };
 
-export default Contact;
+export default ContactIcon;

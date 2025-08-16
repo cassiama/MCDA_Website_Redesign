@@ -162,11 +162,11 @@
 
   
   /* misc. elements w/ "surfaces" */
-  --color-card: var(--mcda-white);
+  --color-card: var(--mcda-white-50);
   --color-card-border: var(--mcda-teal-40);
   --color-table-border: var(--mcda-green-40);
   --color-table-header: var(--mcda-green-60);
-  --color-table-cells: var(--mcda-white);
+  --color-table-cells: var(--mcda-white-50);
   --color-table-text: var(--mcda-gray-50);
   --color-table-cell-divider: var(--mcda-teal-20);
   --color-table-cells-caption: var(--mcda-green-50);
@@ -185,8 +185,12 @@
 @utility shadow-elev-300 { box-shadow: 0 4px 4px -1px rgb(0 0 0 / 0.20); }
 @utility shadow-elev-200 { box-shadow: 0 4px 4px -1px rgb(0 0 0 / 0.10); }
 
+/* sections */
+@utility section { @apply bg-section-bg border-t-2 border-b-2 border-teal-20 }
+
 /* inputs */
-@utility field { @apply w-fit min-w-35 rounded-md bg-input-bg border-1 border-card-border px-4 py-2 text-body-md placeholder:text-input-hint shadow-elev-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-50 }
+@utility field { @apply w-full min-w-35 bg-input-bg rounded-md border-1 border-card-border px-4 py-2 text-body-md placeholder:text-input-hint shadow-elev-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-50 }
+@utility textarea { @apply w-full bg-input-bg rounded-md border-1 border-card-border px-3 py-2 text-body-md placeholder:text-input-hint shadow-elev-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-50 }
 
 /* buttons */
 @utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-3 py-2 text-button font-[var(--text-button--font-weight)] transition-shadow duration-150 shadow-elev-300 hover:shadow-elev-400 select-none; }
