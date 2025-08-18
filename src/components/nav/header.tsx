@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/../public/images/MCDA_Logo.webp";
+import HamburgerMenu from "../core/hamburger";
 
 type NavLink = {
     href: string,
@@ -77,38 +78,10 @@ const Header = (): JSX.Element => {
                 </nav>
 
                 {/* right: mobile hamburger */}
-                <div className="justify-self-end hover:scale-[1.03] hover:shadow-elev-400 focus-visible:scale-[1.03]">
-                    <button
-                        type="button"
-                        onClick={() => setOpen((visibility) => !visibility)}
-                        className="lg:hidden justify-self-end inline-grid place-items-center h-16 w-16 rounded-lg bg-primary shadow-elev-300"
-                        aria-label={ open ? "Close menu" : "Open menu" }
-                        aria-expanded={open}
-                        aria-controls="mobile-menu"
-                    >
-                        {/* simple menu toggle, icon changes with state */}
-                        <span className="relative inline-block h-8 w-8">
-                            {/* menu is closed */}
-                            {!open && (
-                                <>
-                                    <span className="absolute inset-x-0 top-0 h-[2px] bg-black" />
-                                    <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px] bg-black" />
-                                    <span className="absolute inset-x-0 bottom-0 h-[2px] bg-black" />
-                                </>
-                            )}
-                            
-                            {/* menu is open */}
-                            {open && (
-                                <>
-                                    <span className="relative inline-block h-8 w-8">
-                                        <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 rotate-45 h-[2px] bg-black" />
-                                        <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 -rotate-45 h-[2px] bg-black" />
-                                    </span>
-                                </>
-                            )}
-                        </span>
-                    </button>
-                </div>
+                <HamburgerMenu
+                    isOpen={open}
+                    onClick={() => setOpen((visibility: boolean) => !visibility)}
+                />
             </div>
 
             {/* mobile overlay - appears below the logo & hamburger menu */}
