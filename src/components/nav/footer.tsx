@@ -45,7 +45,7 @@ const Footer = (): JSX.Element => {
                         Quick Links
                     </h2>
                     <ul
-                        className="w-fit mx-auto flex flex-wrap justify-center gap-x-6 gap-y-6 md:w-full md:gap-x-16 md:gap-y-0 text-h3 text-link-text"
+                        className="w-fit mx-auto flex flex-wrap justify-center gap-x-6 gap-y-6 md:w-full md:gap-x-16 lg:gap-y-0 text-h3 text-link-text"
                     >
                         {QUICK_LINKS.map(({ href, label }) => (
                             <li
@@ -85,7 +85,7 @@ const Footer = (): JSX.Element => {
                 className="mt-10 md:mt-8 flex flex-col items-center"
             >
                 <div
-                    className="md:min-w-225 grid grid-cols-1 md:inline-flex items-center justify-items-center gap-3"
+                    className="lg:min-w-2xl grid grid-cols-1 lg:inline-flex items-center justify-items-center gap-3"
                 >
                     <h2
                         id="newsletter-title"
