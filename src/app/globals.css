@@ -188,6 +188,19 @@
 /* sections */
 @utility section { @apply bg-section-bg border-t-2 border-b-2 border-teal-20 shadow-elev-300 }
 
+/* tables */
+@utility tbl-header { @apply bg-table-header text-body-md }
+@utility tbl-header-row { @apply px-6 py-3 text-white font-bold text-left }
+@utility tbl-body {
+  /* background + text */
+  @apply bg-table-cells text-table-text;
+
+  /* add a bottom border to all cells, except the last row */
+  @apply [&_tr:not(:last-child)_td]:border-b-2 [&_tr:not(:last-child)_td]:border-table-cell-divider;
+}
+@utility tbl-body-row { @apply px-6 py-4 text-table-text }
+@utility tbl { @apply w-full rounded-2xl border-separate border-spacing-0 border-3 border-table-border shadow-elev-300 overflow-clip }
+
 /* form inputs */
 @utility field { @apply w-full bg-input-bg rounded-md border-1 border-card-border px-4 py-2 text-body-md placeholder:text-body placeholder:text-input-hint shadow-elev-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-50 }
 @utility textarea { @apply w-full bg-input-bg rounded-md border-1 border-card-border px-3 py-2 text-body-md placeholder:text-body placeholder:text-input-hint shadow-elev-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-50 }
