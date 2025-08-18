@@ -32,7 +32,7 @@ const Footer = (): JSX.Element => {
         >
             {/* quick links nav */}
             <div
-                className="mx-auto max-w-screen-xl px-4 md:px-6 py-10 md:py-12"
+                className="mx-auto max-w-screen-xl px-4 md:px-6 py-10 md:py-8"
             >
                 <nav
                     aria-label="Quick Links"
@@ -55,7 +55,7 @@ const Footer = (): JSX.Element => {
                                 <Link
                                     key={href}
                                     href={href}
-                                    className="inline-block font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,.20)] text-h3 md:text-h2 hover:text-secondary-link-text hover:scale-[1.03] focus-visible:scale-[1.03] focus-visible:outline-none focus-visible:underline"
+                                    className="inline-block font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,.20)] text-h3 md:text-h2 md:font-bold hover:text-secondary-link-text hover:scale-[1.03] focus-visible:scale-[1.03] focus-visible:outline-none focus-visible:underline"
                                 >
                                     {label}
                                 </Link>
@@ -66,7 +66,9 @@ const Footer = (): JSX.Element => {
             </div>
 
             {/* contact */}
-            <div className="mt-8 md:mt-10 p-3 flex flex-wrap justify-center gap-8">
+            <div 
+                className="flex flex-wrap justify-center gap-8 md:gap-21"
+            >
                 {CONTACT_ICONS.map(({ label, href, icon }) => (
                     <ContactIcon
                         key={label.toLowerCase()}
@@ -80,34 +82,38 @@ const Footer = (): JSX.Element => {
             {/* newsletter subscription */}
             <section
                 aria-labelledby="newsletter-title"
-                className="mt-10 md:mt-12 flex flex-col items-center"
+                className="mt-10 md:mt-8 flex flex-col items-center"
             >
-                <h2
-                    id="newsletter-title"
-                    className="w-fit md:heading-1 md:text-header-2 heading-2 text-center"
+                <div
+                    className="md:min-w-225 grid grid-cols-1 md:inline-flex items-center justify-items-center gap-3"
                 >
-                    Subscribe to Our Newsletter:
-                </h2>
-                <form
-                    className="mt-4 md:mt-5 w-full max-w-md md:max-w-xl flex justify-center items-center gap-3"
-                >
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email here"
-                        className="field"
-                        required
-                    />
-                    <button
-                        className="btn-secondary rounded-lg shrink-0 px-4 py-2"
+                    <h2
+                        id="newsletter-title"
+                        className="w-[75%] md:w-[150%] heading-2 md:heading-1 md:text-header-2 text-center"
                     >
-                        Subscribe
-                    </button>
-                </form>
+                        Subscribe to Our Newsletter:
+                    </h2>
+                    <form
+                        className="mt-4 md:mt-5 w-full max-w-md md:max-w-xl inline-flex justify-center items-center gap-3"
+                    >
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email here"
+                            className="field placeholder:text-h4"
+                            required
+                        />
+                        <button
+                            className="btn-secondary rounded-lg shrink-0 px-4 py-2"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
 
                 {/* copyright */}
                 <p
-                    className="m-8 md:m-9 text-center text-body-md text-text"
+                    className="w-80 md:w-full m-8 md:m-9 text-center text-body-md text-text"
                 >©{year} Monmouth County Diversity Alliance. All rights reserved.</p>
             </section>
         </footer>
