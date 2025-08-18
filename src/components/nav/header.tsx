@@ -81,9 +81,7 @@ const Header = (): JSX.Element => {
                     <button
                         type="button"
                         onClick={() => setOpen((visibility) => !visibility)}
-                        className="lg:hidden justify-self-end inline-grid place-items-center
-                        h-16 w-16 rounded-lg bg-primary 
-                        shadow-elev-300"
+                        className="lg:hidden justify-self-end inline-grid place-items-center h-16 w-16 rounded-lg bg-primary shadow-elev-300"
                         aria-label={ open ? "Close menu" : "Open menu" }
                         aria-expanded={open}
                         aria-controls="mobile-menu"
